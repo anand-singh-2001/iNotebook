@@ -32,7 +32,7 @@ const Login = (props) => {
         setCredentials({ ...credentials, [e.target.name]: e.target.value }) //Allows typing in the fields.
     }
     return (
-        <div mt-3>
+        <div mt-3="true">
             <h2>Login to continue to iNotebook</h2>
             <form onSubmit={handleSubmit}> {/**onSubmit function is placed in form tag not button */}
                 <div className="mb-3">
