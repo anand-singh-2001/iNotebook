@@ -1,10 +1,14 @@
 //Connecting to mongoDB server
+require("dotenv").config();
 
-const mongoose = require('mongoose')
-const mongoURI = "mongodb://127.0.0.1:27017/inotebook"  //inotebook database created to store the created user data.
+const mongoose = require("mongoose");
+const mongoURI = process.env.MONGO_URL; //inotebook database created to store the created user data.
+console.log(mongoURI);
 const connectToMongo = () => {
-    mongoose.connect(mongoURI).then(() => console.log("Mongo Connected")).catch((err) => console.log("Error Connecting", err))
-}
-
+  mongoose
+    .connect(mongoURI)
+    .then(() => console.log("Mongo Connected"))
+    .catch((err) => console.log("Error Connecting", err));
+};
 
 module.exports = connectToMongo;
